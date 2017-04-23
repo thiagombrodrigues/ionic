@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>HTTP</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+
+      <ion-thumbnail item-left>
+         <img [src]="item.avatar">
+      </ion-thumbnail>
+
+      {{item.first_name | uppercase}} {{item.last_name | uppercase}}
+      <div class="item-note" item-right>
+        {{item.id}}
+      </div>
+    </button>
+  </ion-list>
+  <div *ngIf="selectedItem" padding>
+    Usuário selecionado <b>{{selectedItem.first_name | uppercase}} {{selectedItem.last_name | uppercase}}</b>
+  </div>
+</ion-content>

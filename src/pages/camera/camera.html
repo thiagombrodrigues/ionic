@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Câmera</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides style="height: 50vh">
+    <ion-slide *ngFor="let image of images">
+      <ion-card>
+        <img [src]="image.src"/>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <p>
+    <button ion-button round icon-only block (click)="takePicture()">
+      <ion-icon name="camera"></ion-icon>
+    </button>
+  </p>
+</ion-content>
