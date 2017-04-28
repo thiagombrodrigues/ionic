@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, LoadingController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 
-declare var google;
 
 @Component({
   selector: 'page-geolocation',
@@ -13,20 +12,30 @@ export class GeolocationPage {
   public latitude: number;
   public longitude: number;
 
-  constructor(public navCtrl: NavController, public geolocation: Geolocation) {
-
-  }
+  constructor(
+    public navCtrl: NavController,
+    public geolocation: Geolocation,
+    public loadingCtrl: LoadingController
+  ) { }
 
   ionViewDidLoad(){
     this.getLocation();
   }
 
   getLocation():void {
+
+    let loading = this.loadingCtrl.create({
+      content: 'Carregando dados...'
+    });
+    loading.present();
+
     this.geolocation.getCurrentPosition().then((position) => {
       this.latitude = position.coords.latitude;
       this.longitude = position.coords.longitude;
-    }, (err) => {
-      console.log(err);
+      loading.dismiss();
+    }, (error) => {
+      loading.dismiss();
+      alert(error);
     });
   }
 }

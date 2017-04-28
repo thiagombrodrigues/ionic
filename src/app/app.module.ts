@@ -5,13 +5,24 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { Camera } from '@ionic-native/camera';
 import { Geolocation } from '@ionic-native/geolocation';
 import { GoogleMaps } from '@ionic-native/google-maps';
+import { DeviceMotion } from '@ionic-native/device-motion';
+
+
+import { NativeStorage } from '@ionic-native/native-storage';
+import { IonicStorageModule } from '@ionic/storage';
+
+
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HttpPage } from '../pages/http/http';
 import { CameraPage } from '../pages/camera/camera';
 import { GeolocationPage } from '../pages/geolocation/geolocation';
+import { ContatosPage } from '../pages/contatos/contatos';
+import { NovoContatoPage } from '../pages/contatos/novo-contato';
 import { MapsPage } from '../pages/maps/maps';
+import { AcelerometroPage } from '../pages/acelerometro/acelerometro';
+import { LocalStoragePage } from '../pages/local-storage/local-storage';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,12 +34,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HttpPage,
     CameraPage,
     GeolocationPage,
-    MapsPage
+    ContatosPage,
+    NovoContatoPage,
+    MapsPage,
+    AcelerometroPage,
+    LocalStoragePage
   ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,14 +53,20 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HttpPage,
     CameraPage,
     GeolocationPage,
-    MapsPage
+    ContatosPage,
+    NovoContatoPage,
+    MapsPage,
+    AcelerometroPage,
+    LocalStoragePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Camera,
     Geolocation,
+    DeviceMotion,
     GoogleMaps,
+    NativeStorage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

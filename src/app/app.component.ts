@@ -7,7 +7,10 @@ import { HomePage } from '../pages/home/home';
 import { HttpPage } from '../pages/http/http';
 import { CameraPage } from '../pages/camera/camera';
 import { GeolocationPage } from '../pages/geolocation/geolocation';
+import { ContatosPage } from '../pages/contatos/contatos';
 import { MapsPage } from '../pages/maps/maps';
+import { AcelerometroPage } from '../pages/acelerometro/acelerometro';
+import { LocalStoragePage } from '../pages/local-storage/local-storage';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,11 +28,11 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'LocalStorage', component: null },
-      { title: 'Acelerometro', component: null },
+      { title: 'LocalStorage', component: LocalStoragePage },
+      { title: 'Acelerometro', component: AcelerometroPage },
       { title: 'Geolocation', component: GeolocationPage },
       { title: 'Maps', component: MapsPage },
-      { title: 'Contatos', component: null },
+      { title: 'Contatos', component: ContatosPage },
       { title: 'Media', component: null },
       { title: 'Camera', component: CameraPage },
       { title: 'Http', component: HttpPage },
