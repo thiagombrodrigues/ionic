@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Media</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <button ion-button outline icon-left icon-only (click)="playFile()">
+        <ion-icon name='play' is-active="false"></ion-icon>
+    </button>
+    <button ion-button outline icon-center icon-only (click)="pauseFile()">
+        <ion-icon name='pause' is-active="false"></ion-icon>
+    </button>
+    <button ion-button outline icon-right icon-only (click)="stopFile()">
+        <ion-icon name='square' is-active="false"></ion-icon>
+    </button>
+</ion-content>

@@ -23,6 +23,7 @@ import { NovoContatoPage } from '../pages/contatos/novo-contato';
 import { MapsPage } from '../pages/maps/maps';
 import { AcelerometroPage } from '../pages/acelerometro/acelerometro';
 import { LocalStoragePage } from '../pages/local-storage/local-storage';
+import { MediaPage } from '../pages/media/media';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -38,7 +39,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     NovoContatoPage,
     MapsPage,
     AcelerometroPage,
-    LocalStoragePage
+    LocalStoragePage,
+    MediaPage
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     NovoContatoPage,
     MapsPage,
     AcelerometroPage,
-    LocalStoragePage
+    LocalStoragePage,
+    MediaPage
   ],
   providers: [
     StatusBar,

@@ -11,6 +11,7 @@ import { ContatosPage } from '../pages/contatos/contatos';
 import { MapsPage } from '../pages/maps/maps';
 import { AcelerometroPage } from '../pages/acelerometro/acelerometro';
 import { LocalStoragePage } from '../pages/local-storage/local-storage';
+import { MediaPage } from '../pages/media/media';
 
 @Component({
   templateUrl: 'app.html'
@@ -33,7 +34,7 @@ export class MyApp {
       { title: 'Geolocation', component: GeolocationPage },
       { title: 'Maps', component: MapsPage },
       { title: 'Contatos', component: ContatosPage },
-      { title: 'Media', component: null },
+      { title: 'Media', component: MediaPage },
       { title: 'Camera', component: CameraPage },
       { title: 'Http', component: HttpPage },
       { title: 'IndexDB', component: null }

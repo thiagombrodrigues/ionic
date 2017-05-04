@@ -19,7 +19,7 @@ export class NovoContatoPage {
     constructor(
         public navCtrl: NavController,
         public navParams: NavParams,
-        private contacts: Contacts,
+        public contacts: Contacts,
         public alertCtrl: AlertController
     ) { }
 

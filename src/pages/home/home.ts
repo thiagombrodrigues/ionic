@@ -17,8 +17,8 @@ export class HomePage {
         sobrenome: 'Savyo de Freitas'
       },
       {
-        nome: 'Juliane',
-        sobrenome: 'Lincon'
+        nome: 'Julianne',
+        sobrenome: 'Pereira Lima Licon'
       },
       {
         nome: 'Thiago',

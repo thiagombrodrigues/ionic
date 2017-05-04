@@ -1,42 +1,49 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-
-//import { NativeStorage } from '@ionic-native/native-storage';
-import { Storage } from '@ionic/storage';
-
-
+import { NavController, AlertController } from 'ionic-angular';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 @Component({
   selector: 'page-local-storage',
-  templateUrl: 'local-storage.html'
+  templateUrl: 'local-storage.html',
+  providers: [ NativeStorage ]
 })
 export class LocalStoragePage {
 
+  private nome: string;
+
   constructor(
     public navCtrl: NavController,
-    //private nativeStorage: NativeStorage
-    public storage: Storage
+    public nativeStorage: NativeStorage,
+    public alertCtrl: AlertController
+  ) { }
 
-
-  ) { 
-
-
-    storage.ready().then(() => {
-
-       // set a key/value
-       storage.set('name', 'Max');
-
-       // Or to get a key/value pair
-       storage.get('age').then((val) => {
-         //console.log('Your age is', val);
-         alert('Your age is' + val);
-       })
-     });
-
-
-
-
-
+  ionViewDidLoad() {
+    this.nativeStorage.getItem('usuario').then(
+      data => this.nome = data,
+      error => this.nome = null
+    );
   }
 
+  public save(): void {
+    this.nativeStorage.setItem('usuario', this.nome)
+    .then(
+      () => {
+          let mensagem = this.alertCtrl.create({
+            title: 'Local storage',
+            subTitle: 'Nome salvo com sucesso!',
+            buttons: ['Voltar']
+          });
+          mensagem.present();
+      },
+      error => alert(error)
+    );
+  }
+
+  public clear(): void {
+    this.nativeStorage.clear().then(
+      () => this.nome = null,
+      error => alert(error)
+    );
+
+  }
 }
