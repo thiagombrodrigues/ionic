@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>editar-registro</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-input type="text" [(ngModel)]="registro.nome" placeholder="Nome"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="number" [(ngModel)]="registro.idade" placeholder="Idade"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Sexo</ion-label>
+            <ion-select [(ngModel)]="registro.sexo">
+                <ion-option value="masculino">Masculino</ion-option>
+                <ion-option value="feminino">Feminino</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>    
+</ion-content>
+
+<ion-footer no-border>
+    <button ion-button block (click)="salvarRegistro()">Salvar</button>
+</ion-footer>

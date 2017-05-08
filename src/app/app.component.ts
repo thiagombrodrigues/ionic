@@ -12,6 +12,7 @@ import { MapsPage } from '../pages/maps/maps';
 import { AcelerometroPage } from '../pages/acelerometro/acelerometro';
 import { LocalStoragePage } from '../pages/local-storage/local-storage';
 import { MediaPage } from '../pages/media/media';
+import { IndexedDBPage } from '../pages/indexed-db/indexed-db';
 
 @Component({
   templateUrl: 'app.html'
@@ -37,7 +38,7 @@ export class MyApp {
       { title: 'Media', component: MediaPage },
       { title: 'Camera', component: CameraPage },
       { title: 'Http', component: HttpPage },
-      { title: 'IndexDB', component: null }
+      { title: 'IndexDB', component: IndexedDBPage }
     ];
 
   }

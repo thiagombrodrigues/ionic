@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Indexed DB</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-searchbar (ionInput)="pesquisar($event.target.value)" placeholder="Pesquisar"></ion-searchbar>
+    <ion-list>
+      <button ion-item *ngFor="let registro of registros" (click)="editarRegistro(registro)">
+          <h2>{{registro.nome}} ({{registro.idade}})</h2>
+          <p>{{registro.sexo}}</p>
+          <button ion-button item-content color="danger" (click)="excluirRegistro($event, registro.chave)" clear icon-only item-right>
+            <ion-icon name='trash' is-active="false"></ion-icon>
+          </button>
+        </button> 
+    </ion-list>
+</ion-content>
+
+<ion-footer no-border>
+    <button ion-button block (click)="novoRegistro()">Novo Registro</button>
+</ion-footer>

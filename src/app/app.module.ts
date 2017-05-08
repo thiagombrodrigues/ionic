@@ -8,7 +8,7 @@ import { GoogleMaps } from '@ionic-native/google-maps';
 import { DeviceMotion } from '@ionic-native/device-motion';
 
 
-import { NativeStorage } from '@ionic-native/native-storage';
+
 import { IonicStorageModule } from '@ionic/storage';
 
 
@@ -24,6 +24,9 @@ import { MapsPage } from '../pages/maps/maps';
 import { AcelerometroPage } from '../pages/acelerometro/acelerometro';
 import { LocalStoragePage } from '../pages/local-storage/local-storage';
 import { MediaPage } from '../pages/media/media';
+import { IndexedDBPage } from '../pages/indexed-db/indexed-db';
+import { NovoRegistroPage } from '../pages/indexed-db/novo-registro';
+import { EditarRegistroPage } from '../pages/indexed-db/editar-registro';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -37,16 +40,22 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     GeolocationPage,
     ContatosPage,
     NovoContatoPage,
+    EditarRegistroPage,
     MapsPage,
     AcelerometroPage,
     LocalStoragePage,
-    MediaPage
+    MediaPage,
+    IndexedDBPage,
+    NovoRegistroPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot({
+        name: 'banco_dados',
+        driverOrder: ['indexeddb']
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -57,10 +66,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     GeolocationPage,
     ContatosPage,
     NovoContatoPage,
+    EditarRegistroPage,
     MapsPage,
     AcelerometroPage,
     LocalStoragePage,
-    MediaPage
+    MediaPage,
+    IndexedDBPage,
+    NovoRegistroPage
   ],
   providers: [
     StatusBar,
@@ -69,7 +81,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Geolocation,
     DeviceMotion,
     GoogleMaps,
-    NativeStorage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
