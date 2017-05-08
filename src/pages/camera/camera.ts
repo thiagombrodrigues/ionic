@@ -4,7 +4,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 
 @Component({
   selector: 'page-camera',
-  templateUrl: 'camera.html'
+  templateUrl: 'camera.html',
+  providers: [ Camera ]
 })
 export class CameraPage {
 

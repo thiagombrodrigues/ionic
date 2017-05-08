@@ -4,7 +4,8 @@ import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device
 
 @Component({
   selector: 'page-acelerometro',
-  templateUrl: 'acelerometro.html'
+  templateUrl: 'acelerometro.html',
+  providers: [ DeviceMotion ]
 })
 export class AcelerometroPage {
   private subscription: any;

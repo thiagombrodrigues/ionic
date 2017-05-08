@@ -11,7 +11,13 @@ export class MediaPage {
     private file: MediaObject;
 
     constructor(public navCtrl: NavController, public media: MediaPlugin) {
-        this.file = this.media.create('/assets/files/audio.mp3', this.onStatusUpdate, this.onSuccess, this.onError);
+        const onStatusUpdate = (status) => console.log(status);
+        const onSuccess = () => console.log('Operação executada com sucesso.');
+        const onError = (error) => console.error('Erro: ' + error.message + ' código: ' + error.code);
+
+        /* /assets/files/audio.mp3 (para executar via browser) */
+        const path = '/android_asset/www/assets/files/audio.mp3';
+        this.file = this.media.create(path, onStatusUpdate, onSuccess, onError);
     }
 
     ionViewWillLeave() {
@@ -28,17 +34,5 @@ export class MediaPage {
 
     public stopFile(): void {
         this.file.stop();
-    }
-
-    public onStatusUpdate(status:any): void {
-        console.log(status);
-    }
-
-    public onSuccess(): void {
-        console.log('Operação executada com sucesso.');
-    }
-
-    public onError(error:any): void {        
-        console.error(error.message);
     }
 }

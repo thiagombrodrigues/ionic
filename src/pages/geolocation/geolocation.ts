@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 
-
 @Component({
   selector: 'page-geolocation',
-  templateUrl: 'geolocation.html'
+  templateUrl: 'geolocation.html',
+  providers: [ Geolocation ]
 })
 export class GeolocationPage {
 

@@ -6,7 +6,8 @@ declare var google;
 
 @Component({
   selector: 'page-maps',
-  templateUrl: 'maps.html'
+  templateUrl: 'maps.html',
+  providers: [ Geolocation ]
 })
 export class MapsPage {
 
