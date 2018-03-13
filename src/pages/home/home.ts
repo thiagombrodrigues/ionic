@@ -13,14 +13,6 @@ export class HomePage {
 
     this.alunos = [
       {
-        nome: 'Bruno',
-        sobrenome: 'Savyo de Freitas'
-      },
-      {
-        nome: 'Julianne',
-        sobrenome: 'Pereira Lima Licon'
-      },
-      {
         nome: 'Thiago',
         sobrenome: 'Magalhães de Brito Rodrigues'
       }

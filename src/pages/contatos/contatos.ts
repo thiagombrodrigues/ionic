@@ -20,7 +20,7 @@ export class ContatosPage {
     ) { }
 
     ionViewDidLoad() {
-        this.buscarContato(null, true);
+        // this.buscarContato(null, true);
     }
 
     novoContato() {
